@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="table-responsive">
+    <table id="records_table" class="table table-hover table-striped table-bordered table-sm text-nowrap">
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>XSS</th>
+                <th>URL</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+
+<script src="~/lib/signalr/signalr.js"></script>
+<script src="~/js/HubClient.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/push.js/1.0.5/push.js"></script>
+<div class="row mt-5">
+    <div col-auto mb-3>
+        <button onclick="getPermission()" class="btn btn-primary">Get notifications permission</button>
+    </div>
+</div>
+<script>
+        function getPermission() {
+            console.log(Notification.requestPermission());
+        }
+</script>
